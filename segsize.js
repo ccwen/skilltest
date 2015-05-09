@@ -18,3 +18,5 @@ var doFile=function(content) {
 var segsize=doFile(fs.readFileSync(fn,"utf8"));
 segsize.sort(function(a,b){return b[1]-a[1]});
 console.log(segsize);
+var totalsize=segsize.reduce(function(prev,seg){return seg[1]+prev} ,0);
+console.log("average",totalsize/segsize.length);
